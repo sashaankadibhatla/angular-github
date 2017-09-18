@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-12 col-xs-12">
+        <input class="search" [(ngModel)]="searchQuery" placeholder="Search for username">
+        <button (click)="searchUsername(searchQuery);showRepos(searchQuery)" class="btn btn-warning btn1">Search</button>
+        </div>
+    </div>
+</div><br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div *ngIf="user_data">
+                <img src="{{ user_data.avatar_url }}" width=100% height="350">
+                <h1> {{ user_data.name }}</h1>
+                <h2> {{ user_data.login }}</h2>
+                <p class="para1"> {{ user_data.html_url }}</p>
+                <p class="para1"> {{ user_data.bio }}</p>
+               
+                
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <div *ngIf="repo_data">
+                <ul class="list-group">
+                    <h1>Repositories</h1>
+                    <li *ngFor="let repo of repo_data; let i=index" class="repolist">
+                        <a class="para2" href="{{ repo['svn_url'] }}"> {{ repo['name'] }} </a><br> <p class="para1">Repo URL:{{ repo['svn_url']}}<br>Technology: {{ repo['language']}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

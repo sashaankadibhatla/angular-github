@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-12 col-xs-12">
+            <input class="search" [(ngModel)]="searchTech" placeholder="Search for tech">
+            <button (click)="searchKeywordTechnology(searchTech)" class="btn btn-warning btn1">Search</button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div *ngIf="keyword_data">
+            <ul class="list-group">
+                <li *ngFor="let data of keyword_data.items;let i=index;" class="list6">
+                    <div *ngIf="i<10" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="list5">
+                        <h3>Repo_URL: <a href="{{ data.html_url }}" target="_blank">{{ data.name }}</a></h3>
+                        <h3> Contributor:<a href="{{data.owner['html_url']}}"> {{ data.owner['login'] }}</a></h3>
+                        </div>
+            
+                    </div>      
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
