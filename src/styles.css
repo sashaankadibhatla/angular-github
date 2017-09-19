@@ -16,14 +16,22 @@
 
 }
 .search{
-    width:80%;
+    width:70%;
     height:60px;
     font-size:20px;
+}
+.search1
+{
+    background-color :rbga(255,255,255,0.75);
 }
 .btn1
 {
     font-size:20px;
 }
+.route1,.route2{
+    font-size:30px;
+}
+
 .list1
 {
  color:black;

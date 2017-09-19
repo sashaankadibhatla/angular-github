@@ -1,6 +1,12 @@
 
-
-<a routerLink="/searchkeyword">Search keyword</a>
-
-<a routerLink="/searchusername">Search username</a>
-<router-outlet></router-outlet>
+<div class="container search1">
+    <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <button><a routerLink="/searchusername" class="route1">Search Username</a></button>
+                </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <button><a routerLink="/searchkeyword" class="route2">Search Language(Technology)</a></button>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
